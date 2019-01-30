@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+    </head>
+    
+    <style>
+        #back {
+            position: absolute;
+            margin: 0px;
+            padding: 5px;
+            left: 0vw;
+            top: 0vh;
+            z-index: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("https://images.unsplash.com/uploads/14116941824817ba1f28e/78c8dff1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=933&q=80");
+            background-repeat: repeat;
+            background-size: cover;
+        }
+        #wiring {
+            position: absolute;
+            margin: auto;
+            top: 3vh;
+            left: 3vw;
+            height: 90vh;
+            width: 95vh;
+            border: 1px solid white;
+        }
+        #title {
+            position: absolute;
+            top: 0vh;
+            left: 0vw;
+            height: 20%;
+            width: 99.9%;
+            background-color: skyblue;
+            color: ghostwhite;
+            font-size: 8vh;
+            font-family: fantasy, cursive;
+            text-align: center;
+            z-index: 1;
+            background-image: linear-gradient(pink, lightskyblue);
+            border: 1px solid white;
+        }
+        #par {
+            position: absolute;
+            padding: 2px;
+            top: 20.5%;
+            left: 5%;
+            height: 10%;
+            width: 90%;
+            background-color: hotpink;
+            color: white;
+            font-size: 2vh;
+            text-align: center;
+            border-radius: 10%;
+        }
+        #object {
+            position: absolute;
+            top: 31.5%;
+            left: 0;
+            height: 68.5%;
+            width: 33%;
+            background-color: lightskyblue;
+            background-image: linear-gradient(lightskyblue, magenta);
+            border: 1px solid white;
+        }
+        #mic {
+            position: absolute;
+            left: 16%;
+            top: 5%;
+            z-index: 2;
+            width: 80%;
+            height: 50%;
+            background-image: url("https://images.unsplash.com/photo-1531651008558-ed1740375b39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #objwords {
+            position: absolute;
+            padding: 2px;
+            top: 63%;
+            left: 5%;
+            height: 20%;
+            width: 90%;
+            background-color: hotpink;
+            color: white;
+            font-size: 2vh;
+            text-align: center;
+            border-radius: 20%;
+            opacity: 0.95;
+        }
+        #game {
+            position: absolute;
+            top: 31.5%;
+            left: 33.5%;
+            height: 68.5%;
+            width: 33%;
+            background-color: mediumblue;
+            background-image: linear-gradient(lightskyblue, magenta);
+            border: 1px solid white;
+        }
+        #gta {
+            position: absolute;
+            left: 10%;
+            top: 5%;
+            z-index: 2;
+            width: 80%;
+            height: 50%;
+            background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Grand_Theft_Auto_V.png/220px-Grand_Theft_Auto_V.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #gamewords {
+            position: absolute;
+            padding: 2px;
+            top: 63%;
+            left: 5%;
+            height: 20%;
+            width: 90%;
+            background-color: hotpink;
+            color: white;
+            font-size: 2vh;
+            text-align: center;
+            opacity: 0.95;
+        }
+        #movie {
+            position: absolute;
+            top: 31.5%;
+            left: 67%;
+            height: 68.5%;
+            width: 32.9%;
+            background-color: mediumslateblue;
+            background-image: linear-gradient(lightskyblue, magenta);
+            border: 1px solid white;
+        }
+        #superfly {
+            position: absolute;
+            left: 10%;
+            top: 5%;
+            z-index: 2;
+            width: 80%;
+            height: 50%;
+        }
+        #moviewords {
+            position: absolute;
+            padding: 2px;
+            top: 63%;
+            left: 5%;
+            height: 20%;
+            width: 90%;
+            background-color: hotpink;
+            color: white;
+            font-size: 2vh;
+            text-align: center;
+            opacity: 0.95;
+            border-radius: 20%;
+        }
+        #dbline {
+            position: absolute;
+            margin: auto;
+            top: 2vh;
+            left: 2vw;
+            height: 92vh;
+            width: 98.5vh;
+            border: 1px solid white;
+        }
+    </style>
+    
+    <body>
+        <div id="back"> </div>
+        <div id="wiring">
+            <div id="title"> Donald Johnson's Favorite Things </div>
+            <div id="par"> My government name is Donald Marquis Johnson III, but I go by Trey. I am a rapper, poet, producer, and videographer. I picked my current major after realizing that I wanted to go for my passion of audio production and video editing instead of continuing along my Computer Science path. I hope to graduate and be a music producer, shoot/edit music videos, and work on editing movies.</div>
+            <div id="object"> 
+                <div id="mic"> </div>
+                <div id="objwords"> A microphone is my favorite object because I use it to record music and have to use it a lot in my Electronic Media and Broadcasting major as well. </div>
+            </div>
+            <div id="game"> 
+                <div id="gta"> </div>
+                <div id="gamewords"> GTA V is one of my favorite video games of all time and one that I currently have on campus in my dorm room. </div>
+            </div>
+            <div id="movie"> 
+                <div id="superfly">
+                    <iframe width="185" height="230" src="https://www.youtube.com/embed/MQIvV800Atk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="moviewords"> Superfly is one of my favorite movies that is action packed and has one of the best soundtracks ever. Above is a link to the trailer if you are interested. </div>
+            </div>
+        </div>
+        <div id="dbline"> </div>
+    </body>
+    
+</html>
