@@ -11,7 +11,15 @@
             width: 50vmin;
             height: 50vmin;
             border: 1px solid black;
+            
+            animation: fadeIN 3s;
         }
+        
+        @keyframes fadeIN {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+        
         #rect {
             position: absolute;
             top: 50%;
@@ -20,7 +28,16 @@
             height: 30%;
             background-color: black;
             border-radius: 20%;
+            
+            animation: moveUP 2s infinite;
         }
+        
+        @keyframes moveUP {
+            from{transform: translateY(0);}
+            50% {transform: translateY (-20px);}
+            to{transform: translateY(0);}
+        }
+        
         #oval {
             position: absolute;
             top: 55%;
@@ -29,7 +46,16 @@
             height: 20%;
             background-color: white;
             border-radius: 50%;
+            
+            animation: closeEYE 1s infinite;
         }
+        
+        @keyframes closeEYE {
+            from{transform: scaleY(1)}
+            50%{transform: scaleY(0.01)}
+            to{transform: scaleY(1)}
+        }
+        
         #circle {
             position: absolute;
             top: 65%;
@@ -38,6 +64,7 @@
             height: 10%;
             background-color: darkred;
             border-radius: 50%;
+            z-index: 0;
         }
         #diamond {
             position: absolute;
@@ -63,37 +90,62 @@
             left: 5%;
             width: 20%;
             height: 10%;
-            background-color: black;
             transform: skewX(-35deg);
+            z-index: -1;
+            
+            animation: wing01 1s infinite;
         }
+        
+        @keyframes wing01 {
+            from{transform: rotate(0) skewX(-35deg);}
+            25%{transform: rotate(20deg) skewX(-35deg);}
+            75%{transform: rotate(-20deg) skewX(-35deg);}
+            to{transform: rotate(0) skewX(-35deg);}
+        }
+        
         #para02 {
             position: absolute;
             top: 65%;
             left: 75%;
             width: 20%;
             height: 10%;
-            background-color: black;
             transform: skewX(35deg);
+            z-index: -1;
         }
+        
+        .accentColor {
+            background-color: hsl(240, 100%, 50%);
+            border: 2px solid red;
+            background-image: linear-gradient(red, black);
+        }
+        
         #light {
             position: absolute;
             top: 25%;
             left: 45%;
             width: 10%;
             height: 10%;
-            background-color: black;
+            background-color: hsl(0, 100%, 50%);
             clip-path: polygon(0 0, 70% 40%, 50% 40%, 100% 100%, 20% 30%, 40% 30%);
+            
+            animation: blinking 1s infinite;
         }
+        
+        @keyframes blinking {
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+        
     </style>
     <body>
         <div id="robot"> 
             <div id="rect"> </div> 
             <div id="oval"> </div>
-            <div id="circle"> </div>
+            <div id="circle" class="accentColor"> </div>
             <div id="diamond"> </div>
             <div id="trapezoid"> </div>
-            <div id="para01"> </div>
-            <div id="para02"> </div>
+            <div id="para01" class="accentColor"> </div>
+            <div id="para02" class="accentColor"> </div>
             <div id="light"> </div>
         </div>
     </body>
