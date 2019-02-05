@@ -11,10 +11,22 @@
             width: 50vmin;
             height: 50vmin;
             border: 1px solid black;
+            border-radius: 0%;
             
-            animation: fadeIN 1s, 
-                       jumpingUP 2s ease-in 2s,
-                       jumpingDOWN 2s ease-out 2s;;
+            transition: border-radius 0.5s;
+            
+            overflow: hidden;
+            
+            transform-origin: bottom;
+            animation:  fadeIN 1s, 
+                        squeezeDOWN 0.5s 2s,
+                        jumpingUP 2s ease-in 2.5s,
+                        jumpingDOWN 2s ease-out 4.5s,
+                        squeezeDOWN2 1s 6.5s;
+        }
+        
+        #robot:hover {
+            border-radius: 50%;
         }
         
         @keyframes fadeIN {
@@ -23,13 +35,24 @@
         }
         
         @keyframes jumpingUP {
-            from{transform: translateY(0);}
-            to{transform: translateY(-20vmin);}
+            from{transform: scaleY(0.8) translateY(0);}
+            to{transform: scaleY(1.2) translateY(-20vmin);}
+        }
+        
+        @keyframes squeezeDOWN {
+            from{transform: scaleY(1);}
+            to{transform: scaleY(0.8);}
         }
         
         @keyframes jumpingDOWN {
             from{transform: translateY(-20vmin);}
             to{transform: translateY(0);}
+        }
+        
+        @keyframes squeezeDOWN2 {
+            from{transform: scaleY(1);}
+            50%{transform: scaleY(0.5);}
+            to{transform: scaleY(1);}
         }
         
         #rect {
@@ -101,7 +124,7 @@
         #para01 {
             position: absolute;
             top: 65%;
-            left: 5%;
+            left: 0%;
             width: 20%;
             height: 10%;
             transform: skewX(-35deg);
@@ -111,10 +134,9 @@
         }
         
         @keyframes wing01 {
-            from{transform: rotate(0) skewX(-35deg);}
-            25%{transform: rotate(20deg) skewX(-35deg);}
-            75%{transform: rotate(-20deg) skewX(-35deg);}
-            to{transform: rotate(0) skewX(-35deg);}
+            from{transform: rotate(20deg) skewX(-35deg);}
+            50%{transform: rotate(-20deg) skewX(-35deg);}
+            to{transform: rotate(20deg) skewX(-35deg);}
         }
         
         #para02 {
@@ -125,14 +147,14 @@
             height: 10%;
             transform-origin: left top;
             transform: skewX(35deg);
-            z-index: -1;
-            animation: wing02 is infinite;
+            
+            animation: wing02 1s infinite;
         }
         
         @keyframes wing02 {
-            from{transform: rotate(-20deg) skewX(35deg);}
+            from{transform: rotate(0) skewX(0);}
             50%{transform: rotate(20deg) skewX(35deg);}
-            to{transform: rotate(-20deg) skewX(35deg);}
+            to{transform: rotate(0) skewX(0);}
         }
         
         .accentColor {
