@@ -12,12 +12,24 @@
             height: 50vmin;
             border: 1px solid black;
             
-            animation: fadeIN 3s;
+            animation: fadeIN 1s, 
+                       jumpingUP 2s ease-in 2s,
+                       jumpingDOWN 2s ease-out 2s;;
         }
         
         @keyframes fadeIN {
             from{opacity: 0;}
             to{opacity: 1;}
+        }
+        
+        @keyframes jumpingUP {
+            from{transform: translateY(0);}
+            to{transform: translateY(-20vmin);}
+        }
+        
+        @keyframes jumpingDOWN {
+            from{transform: translateY(-20vmin);}
+            to{transform: translateY(0);}
         }
         
         #rect {
@@ -51,9 +63,9 @@
         }
         
         @keyframes closeEYE {
-            from{transform: scaleY(1)}
-            50%{transform: scaleY(0.01)}
-            to{transform: scaleY(1)}
+            from{transform: scaleY(1);}
+            50%{transform: scaleY(0.01);}
+            to{transform: scaleY(1);}
         }
         
         #circle {
@@ -62,10 +74,12 @@
             left: 45%;
             width:10%;
             height: 10%;
-            background-color: darkred;
+            background-color: black;
             border-radius: 50%;
             z-index: 0;
+            opacity: 0.8;
         }
+        
         #diamond {
             position: absolute;
             top: 40%;
@@ -109,8 +123,16 @@
             left: 75%;
             width: 20%;
             height: 10%;
+            transform-origin: left top;
             transform: skewX(35deg);
             z-index: -1;
+            animation: wing02 is infinite;
+        }
+        
+        @keyframes wing02 {
+            from{transform: rotate(-20deg) skewX(35deg);}
+            50%{transform: rotate(20deg) skewX(35deg);}
+            to{transform: rotate(-20deg) skewX(35deg);}
         }
         
         .accentColor {
@@ -141,7 +163,7 @@
         <div id="robot"> 
             <div id="rect"> </div> 
             <div id="oval"> </div>
-            <div id="circle" class="accentColor"> </div>
+            <div id="circle"> </div>
             <div id="diamond"> </div>
             <div id="trapezoid"> </div>
             <div id="para01" class="accentColor"> </div>
