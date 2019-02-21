@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<style>
+    
+    #background{
+        position: absolute;
+        top: auto;
+        left: auto;
+        width: 100vmax;
+        height: 100vmin;
+        background-color:deepskyblue;
+        background-image: linear-gradient(purple, blue);
+        background-size:cover;
+        vertical-align: middle;
+        padding:0;
+        border-color: aqua;
+        z-index:0;
+    }
+    
+    #snow {
+        top:auto;
+        left:0%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color:black;
+        background-image: url("https://images.unsplash.com/photo-1511131341194-24e2eeeebb09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60");
+        background-size:cover;
+        z-index:0;
+        filter: opacity(0.5);
+        
+        animation: snow3 5s linear infinite;
+    }
+    
+    #globe {
+        position: absolute;
+        top: 50vmin;
+        left: 50vmin;
+        transform: translate(-50%, -50%);
+        width: 50vmin;
+        height: 50vmin;
+        background-color: purple;
+        align-content:center;
+        border-radius: 50%;
+        z-index: 0;
+        overflow:hidden;
+        z-index: 1;
+        filter: drop-shadow(5px 10px 5px black);
+    }
+    
+    #globeBackground {
+        top:auto;
+        left:0%;
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        background-color:black;
+        background-image: url("https://images.unsplash.com/photo-1511131341194-24e2eeeebb09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60");
+        background-size:cover;
+        z-index:2;
+        filter: opacity(0.5);
+        
+        animation: snow 5s linear infinite;
+    }
+    
+    #globeBackground2 {
+        top:auto;
+        left:0%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color:black;
+        background-image: url("https://images.unsplash.com/photo-1511131341194-24e2eeeebb09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60");
+        background-size:cover;
+        z-index:3;
+        opacity: 0.2;
+        
+        animation: snow2 5s linear infinite;
+    }
+        
+    #skyline {
+        top:0%;
+        left:0%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color:black;
+        background-image: url("https://previews.123rf.com/images/blamb/blamb1312/blamb131200006/24476578-cartoon-skyline-silhouette-of-the-city-of-adelaide-australia.jpg");
+        background-size:cover;
+        z-index:3;
+        opacity: 0.7;
+        filter: contrast(100);
+    }
+    
+    #couple {
+        top:72%;
+        left:53%;
+        width: 20%;
+        height: 10%;
+        position: absolute;
+        background-color:black;
+        background-image: url("https://ak9.picdn.net/shutterstock/videos/11603099/thumb/1.jpg");
+        background-size:cover;
+        z-index:3;
+        opacity: 0.3;
+        filter: contrast(80);
+    }
+    
+    #globeBase {
+        position: absolute;
+        top: 65.5vmin;
+        left: 28vmin;
+        width: 44vmin;
+        height: 10vmin;
+        background-color: black;
+        transform: perspective(5em) rotateX(10deg);
+        z-index:1;
+        filter: drop-shadow(5px 10px 5px black);
+    }
+    
+    .sunset {
+        background-color: hsl(240, 100%, 50%);
+        border: 5px solid white;
+        background-image: linear-gradient(black, white);
+    }
+    
+    .wood{
+        background-color: brown;
+        border: 1px solid brown;
+        background-image: linear-gradient(sandybrown, brown);
+    }
+    
+    #ground {
+        position: absolute;
+        top: 55vmin;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(black, sandybrown);
+        z-index: 0;
+        border: 2px solid black;
+    }
+    
+    @keyframes snow {
+        0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+        25% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+        50% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+        100% (background-position: 0px 0px, 0px 0px, 0px 0px;)
+    }
+    
+    @keyframes snow2 {
+        0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+        25% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+        50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+        100% (background-position: 0px 0px, 0px 0px, 0px 0px;)
+    }
+    
+    @keyframes snow3 {
+        0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+        25% {background-position: 500px 1000px, 400px 200px, -300px 100px;}
+        50% {background-position: 500px 500px, 200px 100px, -150px 100px;}
+        100% (background-position: 0px 0px, 0px 0px, 0px 0px;)
+    }
+    
+</style>
+<body>
+    <div id="background">    
+        <div id="globe" class="sunset">
+            <div id="globeBackground"> </div>
+            <div id="globeBackground2"> </div>
+            <div id="snow"> </div>
+            <div id="skyline"> </div>
+            <div id="couple"> </div>
+        </div>
+        <div id="ground"> </div>
+        <div id="globeBase" class="wood"> </div>
+    </div>
+    
+</body>
+</html>
