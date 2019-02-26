@@ -1,0 +1,141 @@
+<html>
+<style>
+    #startScreen {
+        position: absolute;
+        top: 30vh;
+        left: 10vw;
+        width: 80vw;
+        height: 40vh;
+        background-image: url("https://images.unsplash.com/photo-1533283725824-a62a971989ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+        /* display: none; /*block*/
+    }
+    
+    #startBTN {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background-color: deepskyblue;
+        background-image: linear-gradient(white,lightskyblue);
+        font-size: 100;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #start {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        color: white;
+        font-family: fantasy;
+        border-color: black;
+    
+    }
+    
+    #gameScreen {
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        width: 90vw;
+        height: 90vh;
+        background-color: deepskyblue;
+        display: none;
+    }
+    
+    #pot {
+        position: absolute;
+        top: 70%;
+        left: 30%;
+        width: 10vw;
+        height: 10vh;
+        background-color: brown;
+    }
+    
+    #can {
+        position: absolute;
+        top: 70%;
+        left: 65%;
+        width: 10vw;
+        height: 10vh;
+        background-color: gainsboro;
+        border-radius: 50%;
+    }
+    
+    #stem {
+        position: absolute;
+        top: 60%;
+        left: 35%;
+        width: 1vw;
+        height: 10vh;
+        background-color: forestgreen;
+    }
+    
+    #endScreen {
+        position: absolute;
+        top: 30vh;
+        left: 10vw;
+        width: 80vw;
+        height: 40vh;
+        background-color: black;
+        display: none;
+    }
+    
+    
+</style>
+    
+<body>
+    <div id="startScreen">
+        <div id="startBTN"> 
+            <div id="start"> START  </div>
+        </div>
+        <div id="title"> </div>
+    </div>
+    <div id="gameScreen"> 
+        <div id="pot"> </div>
+        <div id="stem"></div>
+        <div id="can"> </div>
+    </div>
+    <div id="endScreen"> </div>
+    
+    <script>
+        var myStartScreen;
+        myStartScreen = document.querySelector("#startScreen");
+        
+        var myStartBTN;
+        myStartBTN = document.querySelector("#startBTN");
+        
+        var myGameScreen;
+        myGameScreen = document.querySelector("#gameScreen");
+        
+        var myEndScreen;
+        myEndScreen = document.querySelector("#endScreen");
+        
+        var myCan;
+        myCan = document.querySelector("#can");
+        
+        var myFlower;
+        myFlower = document.querySelector("#stem");
+        
+        var myPositionY = 0;
+        
+        function growFlower() {
+            myPositionY -= 20;
+            myFlower.style.transform = "translateY(" + myPositionY + "%)";
+        }
+        
+        myStartBTN.addEventListener("click", hideStartShowGame, false);
+        
+        myCan.addEventListener("click", growFlower, false);
+        
+        function hideStartShowGame() {
+            myStartScreen.style.display = "none";
+            myGameScreen.style.display = "block";
+        }
+        
+    </script>
+
+</body>
+</html>
