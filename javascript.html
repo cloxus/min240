@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head> </head>
+    <style>
+        #square{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10vmin;
+            height: 10vmin;
+            background-color: red;
+            
+        }
+    
+    
+    </style>
+<body>
+    <div id="square"> </div>
+    
+    <script>
+    // prepare the notepad
+        var mySquare;
+    // find the #square
+        mySquare = document.querySelector("#square");
+    //use that address and do something, change border-radius to circle
+    
+    // make interactive 
+        mySquare.addEventListener("mouseover", doThis, false);
+        mySquare.addEventListener("mouseout", doThisBack, false);
+        
+        function doThis(){
+            //do something - 
+            mySquare.style.borderRadius =  "50%";
+            mySquare.style.backgroundColor = "blue";
+        }
+        
+        function doThisBack(){
+            mySquare.style.borderRadius =  "0%";
+            mySquare.style.backgroundColor = "green"
+        }
+    </script>
+    
+    </body>
+</html>
