@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html>
+<style>
+    #crowdVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        
+    }
+    
+    #playBTN {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        height: 6%;
+        width: 20%;
+        border-radius: 30%;
+        background-image: linear-gradient(purple, aqua);
+        text-align: center;
+        font-size: 5vh;
+        border: 1px solid aqua;
+        color: white;
+        display: block;
+    }
+    
+    #pauseBTN {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        height: 6%;
+        width: 20%;
+        border-radius: 30%;
+        background-image: linear-gradient(purple, aqua);
+        text-align: center;
+        font-size: 5vh;
+        border: 1px solid aqua;
+        color: white;
+        display: none;
+    }
+    
+</style>
+<body>
+    <video id="crowdVideo" loop
+           src="https://media.gettyimages.com/videos/cheering-crowd-at-a-concert-video-id1003423146"> </video>
+    <div id="playBTN"> PLAY </div>
+    <div id="pauseBTN"> PAUSE </div>
+    <script>
+        var crwdVideo;
+        crwdVideo = document.querySelector("#crowdVideo");
+        
+        var plyBTN;
+        plyBTN = document.querySelector("#playBTN");
+        
+        var count = 0;
+        
+        playBTN.addEventListener("click", playVideo, false);        
+        
+        function playVideo() {
+            if(count == 0) {
+                crwdVideo.play();
+                count = 1;
+                playBTN.innerHTML = "pause";
+            }
+            crwdVideo.play();
+            playBTN.style.display("none");
+            pauseBTN.style.display("block");
+            count += 1;
+        }
+        
+        pauseBTN.addEventListener("click", stopVideo, false);
+            
+        function stopVideo() {
+            crwdVideo.stop();
+            pauseBTN.style.display("none");
+            playBTN.style.display("block");
+            count -= 1;
+        }
+            
+    </script>
+</body>
+</html>
