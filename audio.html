@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<style>
+    .material-icons.md-300 {font-size: 30vmin;}
+</style>
+<body>
+
+    <audio loop id="hiphop" src="./music01.mp3"> </audio>
+    <i id="playBTN" class="material-icons md-300"> play_circle_filled </i>
+    
+    <script>
+        var myMusic = document.querySelector("#hiphop");
+        var playBTN = document.querySelector("#playBTN");
+        var playForte = 1;
+        myMusic.load();
+        
+        playBTN.addEventListener("click", playMusic, false);
+        
+        window.addEventListener("focus", playLoud, false);
+        window.addEventListener("blur", playSoft, false);
+        
+        function playMusic() {
+            myMusic.play();
+        }
+        
+        function playLoud() {
+            if(playForte === 0) {
+            myMusic.volume = 1;
+            playForte = 1;
+            } 
+            else {
+                myMusic.volume = 1;
+            }
+        }
+        
+        function playSoft() {
+            myMusic.volume = 0.2;
+            playForte = 0;
+        }
+        
+    </script>
+    
+</body>
+
+
+</html>
