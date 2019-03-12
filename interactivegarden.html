@@ -1,0 +1,382 @@
+<html>
+<style>
+    #startScreen {
+        position: absolute;
+        top: 0vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("https://images.unsplash.com/photo-1533283725824-a62a971989ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+        background-size: cover;
+        background-repeat:repeat;
+        /* display: none; /*block*/
+        text-align: center;
+    }
+    
+    #startBTN {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background-color: deepskyblue;
+        background-image: linear-gradient(white,lightskyblue);
+        font-size: 175;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #start {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        color: white;
+        font-family: fantasy;
+        border-color: black;
+        background-image: linear-gradient(lightskyblue,white);
+    
+    }
+    
+    #title {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        width: 80%;
+        height: 10%;
+        color: limegreen;
+        text-align: center;
+        font: fantasy;
+        font-size: 90;
+    }
+    
+    #gameScreen {
+        position: absolute;
+        top: 0vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: deepskyblue;
+        background-image: url("https://images.unsplash.com/photo-1460411794035-42aac080490a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+        display: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+        
+    }
+    
+    #pot {
+        position: absolute;
+        top: 70%;
+        left: 0%;
+        width: 100vw;
+        height: 60vh;
+        background-color: green;
+        background-image: linear-gradient(green, brown);
+        z-index: 1;
+    }
+    
+    #can {
+        position: absolute;
+        top: 65%;
+        left: 65%;
+        width: 15vmin;
+        height: 15vmin;
+        background-color: plum;
+        border-radius: 50%;
+        text-align: center;
+        z-index: 1;
+        border: 3px solid white;
+        cursor: pointer;
+    }
+    
+    #canLabel {
+        position: absolute;
+        top: 35%;
+        left: 16%;
+        width: 10vmin;
+        height: 10vmin;
+        color: white;
+        text-align: center;
+    }
+    
+    #stem {
+        position: absolute;
+        top: 60%;
+        left: 60vmin;
+        width: 1vw;
+        height: 50vh;
+        background-color: green;
+    }
+    
+    #tree {
+        position: absolute;
+        top: 10vmin;
+        left: 49vmin;
+        width: 20vmin;
+        height: 20vmin;
+        background-color: forestgreen;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg");
+        background-size: 50px 20px;
+        background-repeat: repeat;
+        border-radius: 50%;
+        z-index: 1;
+        display: none;
+        border: 10px dotted green;
+        animation: grow 3s linear infinite;
+        animation-play-state: paused;
+    }
+    
+    @keyframes grow {
+        to { transform: scale(2,2); }
+    }
+    
+    #tree:hover {
+        animation-play-state: running;
+    }
+    
+    #endScreen {
+        position: absolute;
+        top: 0vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        display: none;
+        background-image: url("https://images.wallpaperscraft.com/image/money_dollars_bills_background_surface_65906_2560x1440.jpg");
+        background-size: cover;
+        text-align: center;
+    }
+    
+    #gameT {
+        position: absolute;
+        top: 5vmin;
+        left: 85vmin;
+        color: white;
+        font-size: 60px;
+    }
+    
+    #instructions {
+        position: absolute;
+        left: 95vmin;
+        top: 90vmin;
+        color: white;
+        font-size: 20px;
+    }
+    
+    #exit {
+        position: absolute;
+        top: 85vmin;
+        left: 90vmin;
+        color: white;
+        font-size: 30;
+        z-index: 1;
+        background-image: linear-gradient(red, black);
+        display: none;
+        cursor: pointer;
+    }
+    
+    #endText {
+        position: absolute;
+        color: gold;
+        border: 3px solid gold;
+        background-image: linear-gradient(black, green);
+        top: 30vmin;
+        left: 50vmin;
+        font-size: 10vmin;
+    }
+    
+    #summary {
+        position: absolute;
+        color: gold;
+        top: 42vmin;
+        left: 50vmin;
+        background-color: green;
+    }
+    
+    #restart {
+        position: absolute;
+        color: gold;
+        background-color: green;
+        border: 5px solid gold;
+        left: 90vmin;
+        top: 90vmin;
+        font-size: 5vmin;
+        cursor: pointer;
+    }
+    
+    #workflowBTN {
+        position: absolute;
+        background-color: white;
+        color: white;
+        width: 10%;
+        height: 5%;
+        left: 10%;
+        top: 70%;
+        background-image: linear-gradient(lightskyblue, white);
+        border: 3px solid white;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #workflow {
+        position: absolute;
+        left: 10%;
+        top: 20%;
+        font-size: 125%;
+        color: black;
+        background-size: contain;
+    }
+    
+    #workflowScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vmin;
+        background-image: url("https://github.com/cloxus/min240/blob/master/workflow.jpg?raw=true");
+        background-size: contain;
+        display: none;
+        background-repeat: no-repeat;
+    }
+    
+    #back {
+        position: absolute;
+        left: 90%;
+        top: 90%;
+        background-color: black;
+        color: white;
+        border: 5px solid lightskyblue;
+        cursor: pointer;
+    }
+    
+</style>
+    
+<body>
+    <div id="startScreen">
+        <div id="startBTN"> 
+            <div id="start"> START </div>
+        </div>
+        <div id="title"> MONEY TREE$ </div>
+        <div id="instructions"> Click "Start" to grow your own Money Tree! </div>
+        <div id="workflowBTN"> 
+            <div id="workflow"> Workflow </div>
+        </div>
+    </div>
+    <div id="workflowScreen"> 
+        <div id="back"> Back to Start </div>
+    </div>
+    <div id="gameScreen"> 
+        <div id="pot"> </div>
+        <div id="stem"></div>
+        <div id="can"> 
+            <div id="canLabel"> Click Me </div>
+        </div>
+        <div id="tree"> </div>
+        <div id="gameT"> Click the button to grow your tree and then hover over it for a Suprise! </div>
+        <div id="exit"> X - Click when Done.</div>
+    </div>
+    <div id="endScreen"> 
+        <div id="endText"> CONGRATULATIONS!</div>
+        <div id="summary"> You grew a money tree! Click below to grow another. </div>
+        <div id="restart"> Restart? </div>
+    </div>
+    
+    <script>
+        var myStartScreen;
+        myStartScreen = document.querySelector("#startScreen");
+        
+        var myStartBTN;
+        myStartBTN = document.querySelector("#startBTN");
+        
+        var myGameScreen;
+        myGameScreen = document.querySelector("#gameScreen");
+        
+        var myEndScreen;
+        myEndScreen = document.querySelector("#endScreen");
+        
+        var myWorkflowScreen;
+        myWorkflowScreen = document.querySelector("#workflowScreen");
+        
+        var myCan;
+        myCan = document.querySelector("#can");
+        
+        var myFlower;
+        myFlower = document.querySelector("#stem");
+        
+        var myTree;
+        myTree = document.querySelector("#tree");
+        
+        var myExit;
+        myExit = document.querySelector("#exit");
+        
+        var myRestart;
+        myRestart = document.querySelector("#restart");
+        
+        var myWorkflow;
+        myWorkflow = document.querySelector("#workflowBTN");
+        
+        var backBTN;
+        backBTN = document.querySelector("#back");
+        
+        var count = 0;
+        
+        var myPositionY = 0;
+        
+        function growFlower() {
+            if (count < 3) {
+                myPositionY -= 20;
+                myFlower.style.transform = "translateY(" + myPositionY + "%)";
+                count += 1;
+            }
+            else {
+                myTree.style.display ="block";
+                myExit.style.display = "block";
+            }
+        }
+        
+        myStartBTN.addEventListener("click", hideStartShowGame, false);
+        
+        myCan.addEventListener("click", growFlower, false);
+        
+        myExit.addEventListener("click", suprise, false);
+        
+        myRestart.addEventListener("click", restartGame, false);
+        
+        myWorkflow.addEventListener("click", openWorkflow, false);
+        
+        backBTN.addEventListener("click", backToStart, false);
+        
+        function suprise () {
+            myGameScreen.style.display = "none";
+            myEndScreen.style.display = "block";
+        }
+
+        function hideStartShowGame() {
+            myStartScreen.style.display = "none";
+            myGameScreen.style.display = "block";
+        }
+        
+        function restartGame () {
+            myEndScreen.style.display = "none";
+            location.reload();
+            myStartScreen.style.display = "block";
+            
+        }
+        
+        function openWorkflow () {
+            myStartScreen.style.display = "none";
+            myWorkflowScreen.style.display = "block";
+        }
+        
+        function backToStart () {
+            myWorkflowScreen.style.display = "none";
+            myStartScreen.style.display = "block";
+        }
+        
+        
+    </script>
+
+</body>
+</html>
