@@ -72,7 +72,7 @@
     #frame {
         position: absolute;
         top: 5%;
-        left:30%;
+        left:31.5%;
         width: 50vmin;
         height: 89vmin;
         border: 1px solid blue;
@@ -105,6 +105,17 @@
         border: 5px solid red;
     }
     
+    #pl {
+        position: absolute;
+        top: 68%;
+        left: 41%;
+        width: 19%;
+        height: 1%;
+        z-index: 0;
+        align-content: center;
+        color: red;
+    }
+    
     #shareBtn {
         position: absolute;
         top: 73%;
@@ -118,6 +129,18 @@
         cursor: pointer;
         border: 5px solid lime;
     }
+    
+    #sh {
+        position: absolute;
+        top: 68%;
+        left: 16.5%;
+        width: 19%;
+        height: 1%;
+        z-index: 0;
+        align-content: center;
+        color: lime;
+    }
+    
     #favoriteBtn {
         position: absolute;
         top: 73%;
@@ -130,6 +153,17 @@
         color: black;
         cursor: pointer;
         border: 5px solid aqua;
+    }
+    
+    #fa {
+        position: absolute;
+        top: 68%;
+        left: 71.5%;
+        width: 19%;
+        height: 1%;
+        z-index: 0;
+        align-content: center;
+        color: aqua;
     }
     
     #messages {
@@ -189,7 +223,7 @@
         left: 5%;
         color: red;
         z-index: 2;
-        height: 12vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -205,7 +239,7 @@
         left: 5%;
         color: red;
         z-index: 2;
-        height: 12vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -221,7 +255,7 @@
         left: 5%;
         color: red;
         z-index: 2;
-        height: 30vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -237,7 +271,7 @@
         left: 5%;
         color: lime;
         z-index: 2;
-        height: 15vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -253,7 +287,7 @@
         left: 75%;
         color: aqua;
         z-index: 2;
-        height: 12vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -269,7 +303,7 @@
         left: 75%;
         color: white;
         z-index: 2;
-        height: 10vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         font-size: 25px;
@@ -284,7 +318,7 @@
         left: 75%;
         color: white;
         z-index: 2;
-        height: 10vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         background-image: linear-gradient(black, cadetblue);
@@ -302,7 +336,7 @@
         left: 75%;
         color: white;
         z-index: 2;
-        height: 10vmax;
+        height: vmax;
         width: 20%;
         background-color: black;
         background-image: linear-gradient(black, cadetblue);
@@ -335,9 +369,10 @@
         width: 60%;
         height: 7%;
         background-color: cadetblue;
+        background-image: linear-gradient(cadetblue, grey);
         z-index: 2;
         border-radius: 30%;
-        border: 1px solid white;
+        border: 4px solid white;
         text-align: center;
         font-size: 200%;
         color: white;
@@ -387,10 +422,10 @@
     
     #icon {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 80%;
         color: white;
-        z-index: 2;
+        z-index: 0;
         height: 10vmax;
         width: 10vmax;
         background-color: black;
@@ -407,14 +442,30 @@
         50% { transform: scale(2,2); }
         to { transform: scale(1); }
     }
+    
+    #footer {
+        position: absolute;
+        top: 90%;
+        left: 0%;
+        color: white;
+        background-color: cadetblue;
+        padding: 10px;
+        text-align: center;
+        width: 98%;
+        height: ;
+        
+    }
 </style>
 <body>
     <div id="firstScreen"> 
         <div id="title"> Ripple </div>
         <div id="frame">
             <div id="phone"> </div>
+            <div id="pl"> Play Button</div>
             <div id="playBtn"> </div>
+            <div id="sh"> Share </div>
             <div id="shareBtn"> </div>
+            <div id="fa"> Favorite </div>
             <div id="favoriteBtn"> </div>
             <audio loop id="cita" src="cita.mp3"> </audio>
         </div>
@@ -423,6 +474,12 @@
         <div id="share"> Click the share button to see what it would be like to share music on Ripple</div>
         <div id="favorite"> Click the favorite button to see how Ripple handles favoriting music</div>
         <div id="icon"> </div>
+        <div id="footer"> 
+            <p> @RippleMusic </p>
+            <p> Donald Johnson </p>
+            <p> MIN 240 </p>
+            <p> April 30th 2019 </p>
+        </div>
     </div>
     <div id="secondScreen">
         <div id="title"> Ripple </div>
@@ -435,8 +492,14 @@
                 <div id="blackCircle"> </div>
             </div>
         </div>
-        <div id="play2"> Click on the highlighted message to share</div>
+        <div id="play2"> Clicking the share button takes you to a list of your direct messages. All you have to do it select who in your friends list it is that you wish to send a message to. Click on the highlighted message to continue. </div>
         <div id="icon"> </div>
+        <div id="footer"> 
+            <p> @RippleMusic </p>
+            <p> Donald Johnson </p>
+            <p> MIN 240 </p>
+            <p> April 30th 2019 </p>
+        </div>
     </div>
     <div id="messageScreen">
         <div id="title"> Ripple </div>
@@ -448,6 +511,12 @@
         <div id="play3"> With Ripple, friends can listen to what you are listening to Live, or you can send any songs you like directly to any number of people on your friends list through Ripple's direct messaging system.</div>
         <div id="hover2"> Back to Music (Click Me)</div>
         <div id="icon"> </div>
+        <div id="footer"> 
+            <p> @RippleMusic </p>
+            <p> Donald Johnson </p>
+            <p> MIN 240 </p>
+            <p> April 30th 2019 </p>
+        </div>
     </div>
     <div id="favoriteScreen">
         <div id="title"> Ripple </div>
@@ -462,6 +531,12 @@
         <div id="play3"> Ripple allows you to add songs that you like to a favorites list so that you may come back later and listen to them. You also have the ability to download your music for offline playback.</div>
         <div id="hover3"> Back to Music (Click Me)</div>
         <div id="icon"> </div>
+        <div id="footer"> 
+            <p> @RippleMusic </p>
+            <p> Donald Johnson </p>
+            <p> MIN 240 </p>
+            <p> April 30th 2019 </p>
+        </div>
     </div>
     
 <script>
