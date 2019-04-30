@@ -96,7 +96,7 @@
         top: 71%;
         left: 38.75%;
         width: 19%;
-        height: 11%;
+        height: 10.5%;
         border-radius: 50%;
         z-index: 1;
         align-content: center;
@@ -295,6 +295,24 @@
         color: aquamarine;
     }
     
+    #hover3 {
+        position: absolute;
+        padding: 5px;
+        top: 30%;
+        left: 75%;
+        color: white;
+        z-index: 2;
+        height: 10vmax;
+        width: 20%;
+        background-color: black;
+        background-image: linear-gradient(black, cadetblue);
+        font-size: 25px;
+        border: 3px solid white;
+        text-align: center;  
+        cursor: pointer;
+        color: aquamarine;
+    }
+    
     #black {
         position: absolute;
         top: auto;
@@ -308,6 +326,86 @@
         font-size: 200%;
         color: white;
         padding-top: 10px;
+    }
+    
+    #shuffle {
+        position: absolute;
+        top: 9.5%;
+        left: 20%;
+        width: 60%;
+        height: 7%;
+        background-color: cadetblue;
+        z-index: 2;
+        border-radius: 30%;
+        border: 1px solid white;
+        text-align: center;
+        font-size: 200%;
+        color: white;
+        padding-top: 10px;
+    }
+    
+    #black2 {
+        position: absolute;
+        top: 85.5%;
+        left: auto;
+        width: 99%;
+        height: 12%;
+        background-color: black;
+        z-index: 2;
+        text-align: center;
+        font-size: 200%;
+        color: white;
+        padding-top: 10px;
+        border: 2px solid white;
+    }
+    
+    #black3 {
+        position: absolute;
+        top: 89%;
+        left: auto;
+        width: 99%;
+        height: 12%;
+        background-color: black;
+        z-index: 2;
+        text-align: center;
+        font-size: 200%;
+        color: white;
+        padding-top: 10px;
+        border: 2px solid white;
+    }
+    
+    #blackCircle {
+        position: absolute;
+        top: 22%;
+        left: 41.5%;
+        width: 15%;
+        height: 60%;
+        border-radius: 50%;
+        background-color: black;
+        border: 2px solid white;
+    }
+    
+    #icon {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        color: white;
+        z-index: 2;
+        height: 10vmax;
+        width: 10vmax;
+        background-color: black;
+        background-image: url("https://github.com/cloxus/min240/blob/master/notes.png?raw=true");
+        background-size: contain;
+        text-align: center; 
+        background-repeat: no-repeat;
+        animation: grow 10s linear infinite;
+        animation-play-state: running;
+    }
+    
+    @keyframes grow {
+        from { transform: scale(1); }
+        50% { transform: scale(2,2); }
+        to { transform: scale(1); }
     }
 </style>
 <body>
@@ -324,33 +422,46 @@
         <div id="play"> Click the play button to listen to Cita (Ft. KT) - Trey Clue </div>
         <div id="share"> Click the share button to see what it would be like to share music on Ripple</div>
         <div id="favorite"> Click the favorite button to see how Ripple handles favoriting music</div>
+        <div id="icon"> </div>
     </div>
     <div id="secondScreen">
         <div id="title"> Ripple </div>
         <div id="frame">
             <div id="black"> Ripple</div>
+            <div id="phone"> </div>
             <div id="messages"> </div>
             <div id="ttBtn"> </div>
+            <div id="black3">
+                <div id="blackCircle"> </div>
+            </div>
         </div>
         <div id="play2"> Click on the highlighted message to share</div>
+        <div id="icon"> </div>
     </div>
     <div id="messageScreen">
         <div id="title"> Ripple </div>
         <div id="frame">
             <div id="black"> Ripple</div>
+            <div id="phone"> </div>
             <div id="messages2"> </div>
         </div>
         <div id="play3"> With Ripple, friends can listen to what you are listening to Live, or you can send any songs you like directly to any number of people on your friends list through Ripple's direct messaging system.</div>
         <div id="hover2"> Back to Music (Click Me)</div>
+        <div id="icon"> </div>
     </div>
     <div id="favoriteScreen">
         <div id="title"> Ripple </div>
         <div id="frame">
             <div id="black"> Ripple</div>
             <div id="messages3"> </div>
+            <div id="shuffle"> Shuffle</div>
+            <div id="black2">
+                <div id="blackCircle"> </div>
+            </div>
         </div>
         <div id="play3"> Ripple allows you to add songs that you like to a favorites list so that you may come back later and listen to them. You also have the ability to download your music for offline playback.</div>
-        <div id="hover2"> Back to Music (Click Me)</div>
+        <div id="hover3"> Back to Music (Click Me)</div>
+        <div id="icon"> </div>
     </div>
     
 <script>
@@ -379,7 +490,9 @@
     
     var homeBTN = document.querySelector("#hover2");
     
-    var myFavoriteScreen = document.querySelector("favoriteScreen");
+    var myFavoriteScreen = document.querySelector("#favoriteScreen");
+    
+    var myHomeBTN = document.querySelector("#hover3");
     
     playBTN.addEventListener("click", playMusic, false);
     playBTN.addEventListener("mouseover", showPlay, false);
@@ -387,12 +500,13 @@
     shareBTN.addEventListener("click", shareScreen, false);
     shareBTN.addEventListener("mouseover", showShare, false);
     
-    favoriteBTN.addEventListener("click", favorites, false);
-    favoriteBTN.addEventListener("mouseover", showFavorite, false);
+    favoriteBTN.addEventListener("click", favoriteShow, false);
     
     myTT.addEventListener("click", shareScreen2, false);
     
     homeBTN.addEventListener("click", goHome, false);
+    
+    myHomeBTN.addEventListener("click", backHome, false);
     
     function showPlay() {
         myPlay.style.display = "block";
@@ -400,10 +514,6 @@
     
     function showShare() {
         myShare.style.display = "block";
-    }
-    
-    function showFavorite() {
-        myFavorite.style.display = "block";
     }
     
     function playMusic() {
@@ -426,9 +536,14 @@
         myFirstScreen.style.display = "block";
     }
     
-    function favorites() {
+    function favoriteShow() {
         myFirstScreen.style.display = "none";
         myFavoriteScreen.style.display = "block";
+    }
+    
+    function backHome() {
+        myFavoriteScreen.style.display = "none";
+        myFirstScreen.style.display = "block";
     }
 </script>
 </body>
