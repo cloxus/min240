@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Ripple Interactive Prototype</title>
+</head>
+<style>
+    #title {
+        position: absolute;
+        padding: 5px;
+        padding-left: 20px;
+        top: 0;
+        left: 0;
+        width: 97.5%;
+        height: 10vmin;
+        background-image: linear-gradient(cadetblue, black);
+        font-size: 50px;
+        color:white;
+    }
+    
+    #firstScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vmax;
+        height: 100vmax;
+        align-content: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        
+    }
+    
+    #secondScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vmax;
+        height: 100vmax;
+        align-content: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        display: none;
+    }
+    
+    #messageScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vmax;
+        height: 100vmax;
+        align-content: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        display: none;
+    }
+    
+    #favoriteScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vmax;
+        height: 100vmax;
+        align-content: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        display: none;
+    }
+    
+    #frame {
+        position: absolute;
+        top: 5%;
+        left:30%;
+        width: 50vmin;
+        height: 89vmin;
+        border: 1px solid blue;
+        
+    }
+    
+    #phone {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 50vmin;
+        height: 90vmin;
+        background-color: black;
+        background-image: url("https://github.com/cloxus/min240/blob/master/interface%20design.jpg?raw=true");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    #playBtn {
+        position: absolute;
+        top: 71%;
+        left: 38.75%;
+        width: 19%;
+        height: 11%;
+        border-radius: 50%;
+        z-index: 1;
+        align-content: center;
+        color: black;
+        cursor: pointer;
+        border: 5px solid red;
+    }
+    
+    #shareBtn {
+        position: absolute;
+        top: 73%;
+        left: 16.5%;
+        width: 6.25%;
+        height: 3.75%;
+        border-radius: 50%;
+        z-index: 2;
+        align-content: center;
+        color: black;
+        cursor: pointer;
+        border: 5px solid lime;
+    }
+    #favoriteBtn {
+        position: absolute;
+        top: 73%;
+        left: 74%;
+        width: 6.25%;
+        height: 3.75%;
+        border-radius: 50%;
+        z-index: 2;
+        align-content: center;
+        color: black;
+        cursor: pointer;
+        border: 5px solid aqua;
+    }
+    
+    #messages {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 50vmin;
+        height: 90vmin;
+        background-color: black;
+        background-image: url("https://github.com/cloxus/min240/blob/master/6F809D0B-73E0-463E-9BF6-EB70C90A44F0.png?raw=true");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    #messages2 {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 50vmin;
+        height: 90vmin;
+        z-index: 1;
+        background-color: black;
+        background-image: url("https://github.com/cloxus/min240/blob/master/038848BE-5D38-47FF-A49D-AA62FF0A908B.png?raw=true");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    #messages3 {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 50vmin;
+        height: 90vmin;
+        z-index: 1;
+        background-color: black;
+        background-image: url("https://github.com/cloxus/min240/blob/master/FD174545-3799-427C-ADB4-2695AF1BBEBF.png?raw=true");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    #ttBtn {
+        position: absolute;
+        top: 25%;
+        left: %;
+        width: 98%;
+        height: 11%;
+        z-index: 2;
+        align-content: center;
+        cursor: pointer;
+        border: 5px solid red;
+    }
+    
+    #play {
+        position: absolute;
+        padding: 5px;
+        top: 10%;
+        left: 5%;
+        color: red;
+        z-index: 2;
+        height: 12vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid red;
+        text-align: center;  
+        display: none;
+    }
+    
+    #play2 {
+        position: absolute;
+        padding: 5px;
+        top: 10%;
+        left: 5%;
+        color: red;
+        z-index: 2;
+        height: 12vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid red;
+        text-align: center;  
+        display: block;
+    }
+    
+    #play3 {
+        position: absolute;
+        padding: 5px;
+        top: 10%;
+        left: 5%;
+        color: red;
+        z-index: 2;
+        height: 30vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid red;
+        text-align: center;  
+        display: block;
+    }
+    
+    #share {
+        position: absolute;
+        padding: 5px;
+        top: 30%;
+        left: 5%;
+        color: lime;
+        z-index: 2;
+        height: 15vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid lime;
+        text-align: center; 
+        display: none;
+    }
+    
+    #favorite {
+        position: absolute;
+        padding: 5px;
+        top: 10%;
+        left: 75%;
+        color: aqua;
+        z-index: 2;
+        height: 12vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid aqua;
+        text-align: center;  
+        display: block;
+    }
+    
+    #hover {
+        position: absolute;
+        padding: 5px;
+        top: 30%;
+        left: 75%;
+        color: white;
+        z-index: 2;
+        height: 10vmax;
+        width: 20%;
+        background-color: black;
+        font-size: 25px;
+        border: 3px solid white;
+        text-align: center;  
+    }
+    
+    #hover2 {
+        position: absolute;
+        padding: 5px;
+        top: 30%;
+        left: 75%;
+        color: white;
+        z-index: 2;
+        height: 10vmax;
+        width: 20%;
+        background-color: black;
+        background-image: linear-gradient(black, cadetblue);
+        font-size: 25px;
+        border: 3px solid white;
+        text-align: center;  
+        cursor: pointer;
+        color: aquamarine;
+    }
+    
+    #black {
+        position: absolute;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 8%;
+        background-color: cadetblue;
+        background-image: linear-gradient(cadetblue, black);
+        z-index: 2;
+        text-align: center;
+        font-size: 200%;
+        color: white;
+        padding-top: 10px;
+    }
+</style>
+<body>
+    <div id="firstScreen"> 
+        <div id="title"> Ripple </div>
+        <div id="frame">
+            <div id="phone"> </div>
+            <div id="playBtn"> </div>
+            <div id="shareBtn"> </div>
+            <div id="favoriteBtn"> </div>
+            <audio loop id="cita" src="cita.mp3"> </audio>
+        </div>
+        <div id="hover"> Hover over the various buttons to see what they do</div>
+        <div id="play"> Click the play button to listen to Cita (Ft. KT) - Trey Clue </div>
+        <div id="share"> Click the share button to see what it would be like to share music on Ripple</div>
+        <div id="favorite"> Click the favorite button to see how Ripple handles favoriting music</div>
+    </div>
+    <div id="secondScreen">
+        <div id="title"> Ripple </div>
+        <div id="frame">
+            <div id="black"> Ripple</div>
+            <div id="messages"> </div>
+            <div id="ttBtn"> </div>
+        </div>
+        <div id="play2"> Click on the highlighted message to share</div>
+    </div>
+    <div id="messageScreen">
+        <div id="title"> Ripple </div>
+        <div id="frame">
+            <div id="black"> Ripple</div>
+            <div id="messages2"> </div>
+        </div>
+        <div id="play3"> With Ripple, friends can listen to what you are listening to Live, or you can send any songs you like directly to any number of people on your friends list through Ripple's direct messaging system.</div>
+        <div id="hover2"> Back to Music (Click Me)</div>
+    </div>
+    <div id="favoriteScreen">
+        <div id="title"> Ripple </div>
+        <div id="frame">
+            <div id="black"> Ripple</div>
+            <div id="messages3"> </div>
+        </div>
+        <div id="play3"> Ripple allows you to add songs that you like to a favorites list so that you may come back later and listen to them. You also have the ability to download your music for offline playback.</div>
+        <div id="hover2"> Back to Music (Click Me)</div>
+    </div>
+    
+<script>
+    var playBTN;
+        playBTN = document.querySelector("#playBtn");
+    
+    var shareBTN = document.querySelector("#shareBtn");
+    
+    var favoriteBTN = document.querySelector("#favoriteBtn");
+    
+    var myFirstScreen = document.querySelector("#firstScreen");
+    
+    var myCita = document.querySelector("#cita");
+    
+    var mySecondScreen = document.querySelector("#secondScreen");
+    
+    var myTT = document.querySelector("#ttBtn");
+    
+    var myPlay = document.querySelector("#play");
+    
+    var myShare = document.querySelector("#share");
+    
+    var myFavorite = document.querySelector("#favorite");
+    
+    var myMessageScreen = document.querySelector("#messageScreen");
+    
+    var homeBTN = document.querySelector("#hover2");
+    
+    var myFavoriteScreen = document.querySelector("favoriteScreen");
+    
+    playBTN.addEventListener("click", playMusic, false);
+    playBTN.addEventListener("mouseover", showPlay, false);
+    
+    shareBTN.addEventListener("click", shareScreen, false);
+    shareBTN.addEventListener("mouseover", showShare, false);
+    
+    favoriteBTN.addEventListener("click", favorites, false);
+    favoriteBTN.addEventListener("mouseover", showFavorite, false);
+    
+    myTT.addEventListener("click", shareScreen2, false);
+    
+    homeBTN.addEventListener("click", goHome, false);
+    
+    function showPlay() {
+        myPlay.style.display = "block";
+    }
+    
+    function showShare() {
+        myShare.style.display = "block";
+    }
+    
+    function showFavorite() {
+        myFavorite.style.display = "block";
+    }
+    
+    function playMusic() {
+        myCita.play();
+    }
+    
+    function shareScreen() {
+        myFirstScreen.style.display = "none";
+        mySecondScreen.style.display = "block";
+    }
+    
+    function shareScreen2() {
+        mySecondScreen.style.display = "none";
+        myMessageScreen.style.display = "block";
+
+    }
+    
+    function goHome() {
+        myMessageScreen.style.display = "none";
+        myFirstScreen.style.display = "block";
+    }
+    
+    function favorites() {
+        myFirstScreen.style.display = "none";
+        myFavoriteScreen.style.display = "block";
+    }
+</script>
+</body>
+</html>
