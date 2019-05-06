@@ -44,7 +44,6 @@
         text-align: center;
         color: white;
         overflow: hidden;
-        background-color: skyblue;
     }
     .bottom-center {
         position: absolute;
@@ -61,10 +60,15 @@
         color: white;
         background-color: black;
     }
-    #pitch {
-        background-color: cadetblue;
+    
+    #data {
+        background-color: lightcyan;
         align-content: center;
         text-align: center;
+    }
+    #data2 {
+        background-color: lightcyan;
+        align-content: center;
     }
 </style>
 <body>
@@ -96,7 +100,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Vocal Recognition</h5>
                     <p class="card-text">The Ripple App comes equipped with Tink: a built-in "intelligent assistant" that allows users to speak natural language voice commands in order to usher in a new era of convenience for users.</p>
-                    <a href="#" class="btn btn-primary" style="background-color: cadetblue">Go somewhere</a>
+                    <a href="https://cloxus.github.io/min240/prototype" class="btn btn-primary" style="background-color: cadetblue">See Prototype</a>
                 </div>
             </div>
         </div>
@@ -106,7 +110,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Youtube Music</h5>
                     <p class="card-text">All music comes from Youtube so you can hear your favorite songs all in one wonderful place.</p>
-                    <a href="#" class="btn btn-primary" style="background-color: skyblue">Go somewhere</a>
+                    <a href="https://cloxus.github.io/min240/prototype" class="btn btn-primary" style="background-color: skyblue">See Prototype</a>
                 </div>
             </div>
         </div>
@@ -116,7 +120,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Share with the World</h5>
                     <p class="card-text">Quickly share and view content from users all around the globe with custom profiles, feeds, and direct messaging. Ripple has the design of a music streaming service with social media capabilities.</p>
-                    <a href="#" class="btn btn-primary" style="background-color: cadetblue">Go somewhere</a>
+                    <a href="https://cloxus.github.io/min240/prototype" class="btn btn-primary" style="background-color: cadetblue">See Prototype</a>
                 </div>
             </div>
         </div>
@@ -129,28 +133,53 @@
         <div class="bottom-center"> "Listening to music is fine, but if they had everything in one place then it'd be much better." - Tylynn Lawson </div>
     </div>
     
-    <h2>Design Process</h2>
+    <h1>Design Process</h1>
     <h3>How this app has been designed and developed.</h3>
     
-    <div class="row">
-        <div class="col-4">
-            <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-research-list" data-toggle="list" href="#list-research" role="tab" aria-controls="research">User Research (Interview)</a>
-                <a class="list-group-item list-group-item-action" id="list-brainstorming-list" data-toggle="list" href="#list-brainstorming" role="tab" aria-controls="brainstorming">Brainstorming</a>
-                <a class="list-group-item list-group-item-action" id="list-wireframe-list" data-toggle="list" href="#list-wireframe" role="tab" aria-controls="wireframe">Wireframe</a>
-                <a class="list-group-item list-group-item-action" id="list-workflow-list" data-toggle="list" href="#list-workflow" role="tab" aria-controls="workflow">Workflow</a>
-                <a class="list-group-item list-group-item-action" id="list-interface-list" data-toggle="list" href="#list-interface" role="tab" aria-controls="interface">Interface Design</a>
-            </div>
-        </div>
-        <div class="col-8">
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-research" role="tabpanel" aria-labelledby="list-research-list">...</div>
-                <div class="tab-pane fade" id="list-brainstorming" role="tabpanel" aria-labelledby="list-brainstorming-list">...</div>
-                <div class="tab-pane fade" id="list-wireframe" role="tabpanel" aria-labelledby="list-wireframe-list">...</div>
-                <div class="tab-pane fade" id="list-workflow" role="tabpanel" aria-labelledby="list-workflow-list">...</div>
-                <div class="tab-pane fade" id="list-interface" role="tabpanel" aria-labelledby="list-interface-list">...</div>
-            </div>
-        </div>
+    <h2>User Research (Interview)</h2>
+    <div id="data2">
+        
+        <h3> I interviewed a friend and avid music lover, Tylynn Lawson, to get ideas for this project:</h3>
+         <p>What do you like about your music streaming services and what do you not like?</p>
+
+                    <p>Tylynn Lawson: I like that I can have a playlist and then I pretty much look for a song and then I have it. And that I don’t have to pay for individual songs. I don’t like that some of the artists that you like or less popular songs aren't on there and you have to turn to something else to find it.</p>
+
+                    <p>Why is it annoying that everything’s not in the same place?</p>
+
+                    <p>T: Because when you make a playlist for something you can't always get to what you want, and then when you drive you would have to switch apps to find whatever song that you like and that can be dangerous.</p>
+
+                    <p>Why would it be dangerous to switch apps when driving?</p>
+
+                    <p>T: Because you're not focusing on driving and if you are using GPS, you can’t stream and use GPS at the same time so it makes things difficult.</p>
+
+                    <p>What do you think would help streaming and driving?</p>
+
+                    <p>T: Listening to music is fine, but if they had everything in one place then it'd be much better.</p>
+
+                    <p>What if there was a streaming service that combined the libraries of all the services you were subscribed in one application?</p>
+
+                    <p>T: That would be lit.</p>
+        <p>In conclusion I felt an app with YouTube music streaming capabilities and voice command would be very helpful as a music streaming service.</p>
+    </div>
+    <h2>Brainstorming</h2>
+    <div id="data">
+        <img src="https://github.com/cloxus/min240/blob/master/sticky.jpg?raw=true" height="600">
+
+    </div>
+    <h2>Wireframe</h2>
+    <div id="data">
+        <img src="https://github.com/cloxus/min240/blob/master/wire.jpg?raw=true" height="600">
+
+    </div>
+    <h2>Workflow</h2>
+    <div id="data">
+        <img src="https://github.com/cloxus/min240/blob/master/IMG_5719.jpg?raw=true" height="600">
+
+    </div>
+    <h2>Interface Design</h2>
+    <div id="data">
+        <img src="https://github.com/cloxus/min240/blob/master/musictemp.png?raw=true" height="600">
+        <img src="https://github.com/cloxus/min240/blob/master/buttons.jpg?raw=true" height="200">
     </div>
     
     <p></p>
@@ -158,8 +187,8 @@
     <h2>Pitch Video</h2>
     <h3>This video will show you how the app works.</h3>
     <p></p>
-    <div id="pitch">
-        <iframe width="1519" height="505" src="https://www.youtube.com/embed/SFxZiOTzyhE?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="data">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/P5Bu8GxPW2Q" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     
     <script>
